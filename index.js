@@ -402,7 +402,8 @@ KNXPlatform.prototype.configure = function () {
 				if (globs.webdata.charData.hasOwnProperty(chrName)) {
 					let chr = globs.webdata.charData[chrName];
 					console.dir(chr);
-					response.write('<tr><td><a href="/chardata?name=' + chr.displayName + '">' + chr.displayName + '</a></td></tr>');
+					//response.write('<tr><td><a href="/chardata?name=' + chr.displayName + '">' + chr.displayName + '</a></td></tr>');
+					response.write('<tr><td><a href="/chardata?name=' + chr.displayName + '">' + chr.displayName + ' (' + chr.objectName + ')</a></td></tr>');
 				}
 			}
 			response.write('</table>');
