@@ -13,6 +13,7 @@ ECMA-Script 2015 (6.0) Language required
 var KNXDevice = require('./lib/knxdevice.js');
 var userOpts = require('./lib/user').User;
 var Service, Characteristic; // passed default objects from hap-nodejs
+var FakeGatoHistoryService;
 var globs = {}; // the storage for cross module data pooling;
 //var iterate = require('./lib/iterate');
 var knxmonitor = require('./lib/knxmonitor');
@@ -125,6 +126,21 @@ function registry(homebridgeAPI) {
 	globs.Service = Service;
 	globs.Characteristic = Characteristic;
 	globs.API = homebridgeAPI;
+
+
+ 	// Include FakeGate History Service
+ 	FakeGatoHistoryService = require('fakegato-history')(homebridgeAPI);
+ 	globs.FakeGatoHistoryService = FakeGatoHistoryService;
+
+ 	// Add Elgato Eve Characteristics
+ 	require('./lib/customtypes/eve.js')(homebridgeAPI);
+
+  	// Add local custom characteristics and services
+  	//
+  	// Custom characteristics and services are now created in
+  	// 	lib/customtypes/customKNXHomeKitTypes.js
+  	require('./lib/customtypes/addCustomTypes.js')(homebridgeAPI);
+
 
 	/* load our custom types
 	 *
