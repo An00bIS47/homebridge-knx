@@ -1,7 +1,7 @@
 # homebridge-knx Version 0.3 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url][![Dependency status][david-dm-image]][david-dm-url]   
 
-KNX platform shim for homebridge.
+KNX platform shim for homebridge  with fakegato-history implementation.
 **This cannot run stand-alone in node!**
 
 Please also visit [homebridge github homepage](https://github.com/nfarina/homebridge) first.
@@ -9,6 +9,13 @@ Please also visit [homebridge github homepage](https://github.com/nfarina/homebr
 Latest to homebridge-knx changes can be found in the [CHANGELOG.md](CHANGELOG.md)
 
 ### This can only be used with homebridge >=0.4.28 and Node >=10.19.0
+
+
+
+### Quickstart for adding History Services
+
+Please visit the [knx_config-fakegato-history.json](hhttps://github.com/ctschach/homebridge-knx/blob/fg-history/knx_config-fakegato-history.json.md) file to see examples on how to add history services to you config.
+
 
 ### Prerequisites
 This node module requires a running (and properly configured) **knx daemon (knxd)**. You can find the latest version [here](https://github.com/knxd/knxd).  
